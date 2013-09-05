@@ -1,7 +1,9 @@
 Photogur::Application.routes.draw do
   
   root 'photos#index'
-  resources :photos
+  resources :photos do
+    resources :comments
+  end
   
 
   # The priority is based upon order of creation: first created -> highest priority.
