@@ -1,0 +1,22 @@
+<h1>Add a picture</h1>
+
+<% unless @photo.errors.empty? %>
+<p> <% @photo.errors.messages.each do |message| %>
+    <li><%= message %></li>
+</p>
+<% end %>
+<% end %>
+
+<%= form_for(@photo) do |f| %>
+<%= f.label "Name" %>
+<%= f.text_field :name %><br />
+<%= f.label "Contributor" %>
+<%= f.text_field :author %><br />
+<%= f.label "URL" %>
+<%= f.url_field :url %><br />
+<%= f.label "Description (optional)" %>
+<%= f.text_area :description %><br />
+
+
+<%= f.submit %>
+<% end %>
