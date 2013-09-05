@@ -8,7 +8,7 @@ class PhotosController < ApplicationController
 	end
 	
 	def edit
-		
+		@photo = Photo.find(params[:id])
 	end
 	
 	def show
@@ -16,11 +16,18 @@ class PhotosController < ApplicationController
 	end
 	
 	def update
-		
+		@photo = Photo.find(params[:id])
+		if @photo.update(photo_params)
+			redirect_to @photo
+		else
+			render :edit
+		end
 	end
 	
 	def destroy
-		
+		@photo =Photo.find(params[:id])
+		@photo.destroy
+		redirect_to photos_path
 	end
 	
 	def create
@@ -35,7 +42,7 @@ class PhotosController < ApplicationController
 	end
 
 	def photo_params
-			params.require(:photo).permit(:url, :name, :title, :description)
+			params.require(:photo).permit(:url, :name, :author, :description)
 	end
 
 end
