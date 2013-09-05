@@ -29,6 +29,8 @@ class PhotosController < ApplicationController
 		@photo.destroy
 		redirect_to photos_path
 	end
+
+
 	
 	def create
 		@photo = Photo.new(photo_params)
@@ -44,5 +46,18 @@ class PhotosController < ApplicationController
 	def photo_params
 			params.require(:photo).permit(:url, :name, :author, :description, :votes)
 	end
+
+	def vote_up
+		@photo=Photo.find(params[:id])
+		@photo.vote_up
+		redirect_to @photo
+	end
+
+	def vote_down
+		@photo=Photo.find(params[:id])
+		@photo.vote_down
+		redirect_to @photo
+	end
+
 
 end

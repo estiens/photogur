@@ -1,10 +1,15 @@
 Photogur::Application.routes.draw do
   
   root 'photos#index'
-  resources :photos do
-  resources :comments #change to create
   
+  resources :photos do
+    resources :comments #change to create
   end
+
+  get '/photos/:id/vote_up', to: 'photos#vote_up'
+  get '/photos/:id/vote_down', to: 'photos#vote_down'
+  
+
   
 
   # The priority is based upon order of creation: first created -> highest priority.

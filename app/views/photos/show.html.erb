@@ -1,8 +1,8 @@
 <button><%= link_to "Back to Index", photos_path %></button>
 <class ="container">
 <%= image_tag(@photo.url) %>
-<p><%= @photo.name %><br/><%= @photo.author %></p>
-<%= @photo.created_at %>
+<p>Name: <%= @photo.name %><br/>Contributor: <%= @photo.author %></p>
+<p>Current Votes: <%= @photo.votes %></p>
 
 <br/>
 
@@ -11,7 +11,8 @@
 
 <button><%= link_to "Edit", edit_photo_path %></button>
 
-<button>Vote Up</button>
+<button><%= link_to "Vote Up", "#{photo_path}/vote_up" %></button>
+<button><%= link_to "Vote Down", "#{photo_path}/vote_down" %></button>
 
 <h2>Comments</h2>
 
