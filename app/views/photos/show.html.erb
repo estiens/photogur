@@ -14,6 +14,12 @@
 <button><%= link_to "Vote Up", "#{photo_path}/vote_up" %></button>
 <button><%= link_to "Vote Down", "#{photo_path}/vote_down" %></button>
 
+<div class="tags"><% @photo.tags.any? %>
+  <% @photo.tags.each do |tag| %>
+  <%= link_to tag.name, tagged_url(:tag => tag.name) %>
+<% end %>
+</div>
+
 <h2>Comments</h2>
 
 <% @photo.comments.each do |comment| %>

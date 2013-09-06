@@ -32,8 +32,6 @@ class PhotosController < ApplicationController
 
 	def create
 		@photo = Photo.new(photo_params)
-			# if @photo.valid?
-			
 			if @photo.save
 			redirect_to @photo
 			else
@@ -42,7 +40,7 @@ class PhotosController < ApplicationController
 	end
 
 	def photo_params
-			params.require(:photo).permit(:url, :name, :author, :description, :votes)
+			params.require(:photo).permit(:url, :name, :author, :description, :votes, :tag, :tag_list)
 	end
 
 	def vote_up
@@ -57,5 +55,15 @@ class PhotosController < ApplicationController
 		redirect_to @photo
 	end
 
+	def tagged
+  	if params[:tag].present? 
+    	@photos = Photo.tagged_with(params[:tag])
+  	else 
+    	@photos = Photo.all
+  	end  
+	end
 
 end
+
+
+

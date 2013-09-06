@@ -8,6 +8,8 @@ Photogur::Application.routes.draw do
 
   get '/photos/:id/vote_up', to: 'photos#vote_up'
   get '/photos/:id/vote_down', to: 'photos#vote_down'
+
+  match 'tagged' => 'photos#tagged', :as => 'tagged', via: [:get]
   
 
   
