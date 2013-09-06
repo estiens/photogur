@@ -30,8 +30,6 @@ class PhotosController < ApplicationController
 		redirect_to photos_path
 	end
 
-
-	
 	def create
 		@photo = Photo.new(photo_params)
 			# if @photo.valid?
