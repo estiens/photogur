@@ -1,10 +1,38 @@
+<!-- Content -->
+<div id="content" class="container">
+	<div class="hero-unit">
+		<div class="ac">
+			<h1>Meet the best of Web Basil!</h1><br />
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+		</div>
+	</div>
 
-<% @photos.sort_by! {|photo| [photo.votes, photo.name]}.reverse! %>
-<% @photos.each do |photo| %>
-<p><%= link_to image_tag(photo.url, :width => "200"), "/photos/#{photo.id}" %></p>
-<p>
-	<%= photo.name %><br/>
-	<%= photo.author %>
-</p>
+	<div id="portfolio">
+		<!-- portfolio filter -->		
+		<ul id="portfolio-filter" class="nav nav-tabs">
+			<% @photos.each do |photo| %>
 
-<% end %>
+				<% photo.tags.any? %>
+			  	<% photo.tags.each do |tag| %>
+					<li class="active"><a href="#" class="filter" data-filter="*">All</a></li>
+					<li>			   <a href="#" class="filter" data-filter=<%= link_to tag.name, tagged_url(:tag => tag.name) %></a></li>
+				<% end %>
+			<% end %>
+		</ul>
+
+		<!-- portfolio items -->				<div class="row" id="portfolio-items">
+
+			<!-- portfolio item-->
+				<% @photos.sort_by! {|photo| [photo.votes, photo.name]}.reverse! %>
+				<% @photos.each do |photo| %>
+				<div class="span3 project zoom" data-tags="design">
+					<a class="thumbnail " href="<%= photo_path(photo) %>" >
+						<%= image_tag(photo.url, :class => "thumbnail-height")%>
+						<h5 class="project-user project-name"><%= photo.name %></h5>
+						<p class="project-author project-name">By: <%= photo.author %></p>
+					</a>
+				</div>
+				<% end %>
+			<!-- end portfolio item-->
+		</div>
+</div>

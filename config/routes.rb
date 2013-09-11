@@ -11,7 +11,10 @@ Photogur::Application.routes.draw do
 
   match 'tagged' => 'photos#tagged', :as => 'tagged', via: [:get]
   
-
+  #routs to static pages
+  get '/contact', to: 'static_pages#contact'   
+  get '/blog',    to: 'static_pages#blog' 
+  get '/about',   to: 'static_pages#about'  
   
 
   # The priority is based upon order of creation: first created -> highest priority.

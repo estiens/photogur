@@ -1,0 +1,53 @@
+<!-- navigation -->
+<div class="navbar navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container-fluid">
+
+      <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
+
+      <!-- Be sure to leave the brand out there if you want it shown -->
+      <%= link_to "Web Basil", root_path, class: 'brand', alt: "logo" %>
+
+      <!-- Everything you want hidden at 940px or less, place within here -->
+      
+      <div class="nav-collapse">
+        <!-- .nav, .navbar-search, .navbar-form, etc -->
+        <ul class="nav pull-right">
+          <li class=""><%= link_to "Add New image", new_photo_path %></li>
+          <li class=""><%= link_to "About", about_path %></li>
+          <li class=""><%= link_to "Blog", blog_path %></li>
+          <li class=""><%= link_to "Contact", contact_path %></li>
+          <li class="dropdown">
+            <a data-toggle="dropdown" class="dropdown-toggle" href="#"><i class="icon-large icon-user"></i> <b class="caret"></b></a>
+            <ul class="dropdown-menu dropdown-user-account">
+              <li class="account-img-container">
+                <img src="assets/user.png" class="thumb account-img">
+              </li>
+              <li class="account-info">
+                <h3>Ahmed Abu-Nadar</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <p><a href="#">Edit</a> | <a href="#">Privacy Settings</a></p>
+              </li>
+              <li class="account-footer">
+                <div class="row-fluid">
+                  <div class="span8">
+                    <a href="#" class="btn btn-primary btn-small">Change avatar</a> <a href="#" class="btn btn-primary btn-small">View profile</a>
+                  </div>
+                  <div class="span4 align-right">
+                    <a href="#" class="btn btn-danger btn-small">Logout</a>
+                  </div>
+                </div>                  
+              </li>
+            </ul>
+          </li>
+        </ul>
+
+      </div><!--/.nav-collapse -->
+    </div>
+  </div>
+</div>

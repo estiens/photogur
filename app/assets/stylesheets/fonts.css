@@ -1,0 +1,33 @@
+/* imports */
+@font-face {
+	font-family: ChunkFive;
+	src: url('Chunkfive-webfont.eot');
+	src: url('Chunkfive-webfont.eot?#iefix') format('embedded-opentype'), 
+		url('Chunkfive-webfont.woff') format('woff'), 
+		url('Chunkfive-webfont.ttf') format('truetype'), 
+		url('Chunkfive-webfont.svg#ChunkFiveRegular') format('svg');
+}
+
+@font-face {
+  font-family: 'Bready-C';
+  font-style: normal;
+  src: local('Bready'), url('Bready_C-Clockwise_Demo.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Quattro';
+  font-style: normal;
+  src: local('Quattro'), url('QuattrocentoSans-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Capriola';
+  font-style: normal;
+  src: local('Capriola'), url('Capriola-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Bready-A';
+  font-style: normal;
+  src: local('Capriola'), url('Bready_Alternates_Demo.ttf') format('truetype');
+}

@@ -2,6 +2,10 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.0'
+gem 'twitter-bootstrap-rails', '2.1.1'
+gem 'bootstrap-sass', '2.3.2.0'
+gem 'acts-as-taggable-on'
+
 
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
@@ -26,8 +30,6 @@ gem 'turbolinks'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
-
-gem 'acts-as-taggable-on'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
